@@ -1,12 +1,15 @@
-import AboutPomodoro from "./pages/about-pomodoro";
 import Home from "./pages/home";
-import NotFound from "./pages/not-found";
 
 import "./styles/global.css";
 import "./styles/theme.css";
+import { TaskContextProvider } from "./providers/task-context-provider/TaskContextProvider";
 
 function App() {
-  return <AboutPomodoro />;
+  return (
+    <TaskContextProvider>
+      <Home />
+    </TaskContextProvider>
+  )
 }
 
 export default App;

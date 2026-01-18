@@ -2,13 +2,13 @@ import styles from "./styles.module.css";
 
 type InputProps = {
   id: string;
-  labeltext?: string;
+  labelText?: string;
 } & React.ComponentProps<"input">;
 
-const Input = ({ type, id, labeltext, ...props }: InputProps) => {
+const Input = ({ type, id, labelText, ...props }: InputProps) => {
   return (
     <>
-      {labeltext && <label htmlFor={id}>{labeltext}</label>}
+      {labelText && <label htmlFor={id}>{labelText}</label>}
       <input type={type} id={id} {...props} className={styles.input} />
     </>
   );

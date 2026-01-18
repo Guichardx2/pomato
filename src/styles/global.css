@@ -14,4 +14,5 @@ body {
   font-size: 1.6rem; /* 16px */
   background: var(--gray-900);
   color: var(--text-default);
+  height: calc(100vh - 40px);
 }

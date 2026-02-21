@@ -9,29 +9,33 @@ type TaskContextProviderProps = {
 };
 
 export const TaskContextProvider = ({ children }: TaskContextProviderProps) => {
+  const [state, dispatch] = useReducer(taskReducer, initialTaskState);
+  const worker = TimeWorkerManager.getInstance();
 
-    const [state, dispatch] = useReducer(taskReducer, initialTaskState);
-    const worker = TimeWorkerManager.getInstance();
+  worker.onmessage((message) => {
+    const countDownSeconds = message.data;
 
-    worker.onmessage((message) => {
-      const countDownSeconds = message.data;
+    if (countDownSeconds <= 0) {
+      dispatch({ type: "COMPLETE_TASK" });
+      worker.terminate();
+    } else {
+      dispatch({
+        type: "COUNT_DOWN",
+        payload: { secondsRemaining: countDownSeconds },
+      });
+    }
+  });
 
-      if (countDownSeconds <= 0) {
-        // dispatch({ type: "COMPLETE_TASK" });
-        worker.terminate();
-      }
-    });
+  useEffect(() => {
+    if (!state.activeTask) {
+      console.log("Nenhuma tarefa ativa. Encerrando o worker.");
+      worker.terminate();
+    }
 
-    useEffect(() => {
-      if (!state.activeTask) {
-        console.log("Nenhuma tarefa ativa. Encerrando o worker.");
-        worker.terminate();
-      }
+    worker.postMessage(state);
+  }, [state, worker]);
 
-      worker.postMessage(state);
-    }, [state, worker ])
-
-    return (
+  return (
     <TaskContext.Provider value={{ state, dispatch }}>
       {children}
     </TaskContext.Provider>

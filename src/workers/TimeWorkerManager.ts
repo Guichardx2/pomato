@@ -1,3 +1,5 @@
+import type { TaskStateModel } from "../models/task/TaskStateModel";
+
 let instace: TimeWorkerManager | null = null;
 
 export default class TimeWorkerManager {
@@ -14,11 +16,11 @@ export default class TimeWorkerManager {
     return instace;
   }
 
-    postMessage(message: any) {
+    postMessage(message: TaskStateModel) {
         this.worker.postMessage(message);
     }
 
-    onmessage(callback: (message: any) => void) {
+    onmessage(callback: (message: MessageEvent) => void) {
         this.worker.onmessage = callback;
     }
 

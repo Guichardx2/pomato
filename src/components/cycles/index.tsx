@@ -12,12 +12,10 @@ const Cycles = () => {
     longBreakTime: "Ciclo de intervalo longo",
   };
   const cycleStep = Array.from({ length: state.currentCycle });
-
-  console.log(cycleStep);
+  
   return (
     <div className={styles.cycles}>
       <span>Ciclos:</span>
-
       <div className={styles.cycleDots}>
         {cycleStep.map((_, index) => {
           const nextCycle = getNextCycle(index);

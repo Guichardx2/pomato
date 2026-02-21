@@ -9,6 +9,7 @@ import useTaskContext from "../../hooks/useTaskContext";
 import { getNextCycle } from "../../utils/getNextCycle";
 import { getNextCycleType } from "../../utils/getNextCycleType";
 import Hints from "../hints";
+import { toaster } from "../../adapters/toaster";
 
 const TaskForm = () => {
   const { state, dispatch } = useTaskContext();
@@ -19,12 +20,16 @@ const TaskForm = () => {
 
   function handleCreateNewTask(e: React.FormEvent) {
     e.preventDefault();
+    toaster.dismiss();
 
     if (!taskNameInput.current) return;
 
     const taskName = taskNameInput.current.value.trim();
 
-    if (!taskName) return;
+    if (!taskName) {
+      toaster.warning("Digite o nome da tarefa!");
+      return
+    };
     const newTask: TaskModel = {
       id: Date.now().toString(),
       name: taskName,
@@ -36,9 +41,12 @@ const TaskForm = () => {
     };
 
     dispatch({ type: "START_TASK", payload: newTask });
+    toaster.success("Tarefa iniciada!");
   }
 
   function handleInterruptTask() {
+    toaster.dismiss();
+    toaster.error("Tarefa interrompida!");
     dispatch({ type: "INTERRUPT_TASK" });
   }
 

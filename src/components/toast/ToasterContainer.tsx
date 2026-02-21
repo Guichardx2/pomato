@@ -1,7 +1,9 @@
 import { Bounce, ToastContainer } from "react-toastify";
 
-const Toast = () => {
+const ToasterContainer = ({ children }: { children: React.ReactNode }) => {
   return (
+    <>
+    {children}
     <ToastContainer
       position="top-right"
       autoClose={5000}
@@ -15,7 +17,8 @@ const Toast = () => {
       theme="light"
       transition={Bounce}
     />
+    </>
   );
 };
 
-export default Toast;
+export default ToasterContainer;

@@ -1,17 +1,19 @@
-import Toast from "./components/toast/Toast";
-import Home from "./pages/home";
+import { RouterProvider } from "@tanstack/react-router";
 import { TaskContextProvider } from "./providers/task-context-provider/TaskContextProvider";
 
 import "./styles/global.css";
 import "./styles/theme.css";
+import { routes } from "./router/routes";
+import ToasterContainer from "./components/toast/ToasterContainer";
 
 function App() {
   return (
     <TaskContextProvider>
-      <Toast />
-      <Home />
+      <ToasterContainer>
+        <RouterProvider router={routes} />
+      </ToasterContainer>
     </TaskContextProvider>
-  )
+  );
 }
 
 export default App;

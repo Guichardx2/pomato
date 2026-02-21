@@ -1,4 +1,5 @@
 import useTaskContext from "../../hooks/useTaskContext";
+import styles from "./styles.module.css";
 
 type HintsProps = {
     nextCycleType: "workTime" | "shortBreakTime" | "longBreakTime"
@@ -21,10 +22,10 @@ const Hints = ({ nextCycleType }: HintsProps) => {
   return (
     <>
       {!!state.activeTask && (
-        <span>{hintsForTasks.activeTask[state.activeTask.type]}</span>
+        <span className={styles.hint}>{hintsForTasks.activeTask[state.activeTask.type]}</span>
       )}
       {!state.activeTask && (
-        <span>{hintsForTasks.noActiveTask[nextCycleType]}</span>
+        <span className={styles.hint}>{hintsForTasks.noActiveTask[nextCycleType]}</span>
       )}
     </>
   );

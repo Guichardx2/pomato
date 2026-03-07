@@ -1,6 +1,7 @@
 import { HistoryIcon, HouseIcon, MoonIcon, SettingsIcon, SunIcon } from "lucide-react";
 import styles from "./styles.module.css";
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 
 type Themes = "light" | "dark";
 
@@ -26,32 +27,32 @@ const Menu = () => {
 
   return (
     <nav className={styles.menu}>
-      <a
-        href="/"
+      <Link
+        to="/"
         className={styles.menuLink}
         aria-label="Ir para a home"
         title="Ir para a home"
       >
         <HouseIcon size={24} />
-      </a>
-      <a
-        href="#"
+      </Link>
+      <Link
+        to="#"
         className={styles.menuLink}
         aria-label="Ir para o histórico"
         title="Ir para o histórico"
       >
         <HistoryIcon size={24} />
-      </a>
-      <a
-        href="#"
+      </Link>
+      <Link
+        to="#"
         className={styles.menuLink}
         aria-label="Ir para as configurações"
         title="Ir para as configurações"
       >
         <SettingsIcon size={24} />
-      </a>
-      <a
-        href="#"
+      </Link>
+      <Link
+        to="#"
         className={styles.menuLink}
         aria-label="Alternar tema"
         title="Alternar tema"
@@ -59,8 +60,8 @@ const Menu = () => {
       > 
       {
         themIcon[theme]
-      }
-      </a>
+      } 
+      </Link>
     </nav>
   );
 };

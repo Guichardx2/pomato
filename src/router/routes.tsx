@@ -28,4 +28,4 @@ const notFoundRoute = createRoute({
 });
 
 const routeTree = rootRoute.addChildren([homeRoute, aboutRoute, notFoundRoute]);
-export const routes = createRouter({ routeTree });
+export const routes = createRouter({ routeTree, scrollRestoration: true, scrollRestorationBehavior: "smooth" });

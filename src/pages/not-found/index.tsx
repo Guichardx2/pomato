@@ -1,9 +1,15 @@
+import { useEffect } from "react";
 import Container from "../../components/container";
 import { GenericHtml } from "../../components/generic-html";
 import Heading from "../../components/heading";
+import { siteConfig } from "../../constants/siteConfig";
 import DefaultTemplate from "../../templates/DefaultTemplate";
+import { setPageTitle } from "../../utils/setPageTitle";
 
 const NotFound = () => {
+  useEffect(() => {
+    setPageTitle(`404 - Página não encontrada | ${siteConfig.name}`);
+  },[])
   return (
     <DefaultTemplate>
       <Container>

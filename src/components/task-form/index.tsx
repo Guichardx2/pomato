@@ -2,7 +2,7 @@ import { PlayCircleIcon, StopCircleIcon } from "lucide-react";
 import Cycles from "../cycles";
 import Button from "../default-button";
 import Input from "../default-input";
-import styles from "./styles.module.css";
+// import styles from "./styles.module.css";
 import { useRef } from "react";
 import type { TaskModel } from "../../models/task/TaskModel";
 import useTaskContext from "../../hooks/useTaskContext";
@@ -52,8 +52,8 @@ const TaskForm = () => {
   }
 
   return (
-    <form onSubmit={handleCreateNewTask} action="" className={styles.taskForm}>
-      <div className={styles.taskFormRow}>
+    <form onSubmit={handleCreateNewTask} action="">
+      <div className="formRow">
         <Input
           ref={taskNameInput}
           type="text"
@@ -65,17 +65,17 @@ const TaskForm = () => {
         />
       </div>
 
-      <div className={styles.taskFormRow}>
+      <div className="formRow">
         <Hints nextCycleType={nextCycleType} />
       </div>
 
       {state.currentCycle > 0 && (
-        <div className={styles.taskFormRow}>
+        <div className="formRow">
           <Cycles />
         </div>
       )}
 
-      <div className={styles.taskFormRow}>
+      <div className="formRow">
         {!state.activeTask && (
           <Button
             type="submit"

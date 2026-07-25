@@ -2,8 +2,15 @@ import DefaultTemplate from "../../templates/DefaultTemplate";
 import Container from "../../components/container";
 import { GenericHtml } from "../../components/generic-html";
 import Heading from "../../components/heading";
+import { setPageTitle } from "../../utils/setPageTitle";
+import { useEffect } from "react";
+import { siteConfig } from "../../constants/siteConfig";
 
 const AboutPomodoro = () => {
+  useEffect(() => {
+    setPageTitle(`Entenda a Técnica Pomodoro | ${siteConfig.name}`);
+  }, []);
+
   return (
     <DefaultTemplate>
       <Container>

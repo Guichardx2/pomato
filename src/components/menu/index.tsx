@@ -36,7 +36,7 @@ const Menu = () => {
         <HouseIcon size={24} />
       </Link>
       <Link
-        to="#"
+        to="/history"
         className={styles.menuLink}
         aria-label="Ir para o histórico"
         title="Ir para o histórico"
@@ -44,7 +44,7 @@ const Menu = () => {
         <HistoryIcon size={24} />
       </Link>
       <Link
-        to="#"
+        to="/settings"
         className={styles.menuLink}
         aria-label="Ir para as configurações"
         title="Ir para as configurações"

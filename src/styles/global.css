@@ -16,3 +16,11 @@ body {
   color: var(--text-default);
   height: calc(100vh - 40px);
 }
+
+form, .formRow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+}

@@ -47,7 +47,7 @@ const AboutPomodoro = () => {
           </ul>
 
           <h2>
-            Mas no <strong>Chronos Pomodoro</strong> tem um diferencial 🚀
+            Mas no <strong>Pomato Pomodoro</strong> tem um diferencial 🚀
           </h2>
 
           <p>
@@ -121,7 +121,7 @@ const AboutPomodoro = () => {
             do tempo.
           </p>
 
-          <h2>Por que usar o Chronos Pomodoro?</h2>
+          <h2>Por que usar o Pomato Pomodoro?</h2>
 
           <ul>
             <li>✅ Organize seu foco com clareza.</li>

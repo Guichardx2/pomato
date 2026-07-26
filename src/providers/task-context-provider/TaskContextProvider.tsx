@@ -52,7 +52,7 @@ export const TaskContextProvider = ({ children }: TaskContextProviderProps) => {
     if (!state.activeTask) {
       worker.terminate();
     }
-    document.title = `${state.formattedSecondsRemaining} | Chronos Pomodoro `;
+    document.title = `${state.formattedSecondsRemaining} | Pomato Pomodoro `;
     worker.postMessage(state);
   }, [state, worker]);
 

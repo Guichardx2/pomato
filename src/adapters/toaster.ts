@@ -1,4 +1,4 @@
-import { toast, type ToastContentProps } from "react-toastify";
+import { toast } from "react-toastify";
 import Dialog from "../components/dialog";
 
 export const toaster = {

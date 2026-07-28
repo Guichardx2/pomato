@@ -1,73 +1,65 @@
-# React + TypeScript + Vite
+# 🍅 Pomato — Pomodoro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O **Pomato** é uma aplicação web simples, intuitiva e moderna baseada na **Técnica Pomodoro**, desenvolvida para ajudar no gerenciamento de tempo, aumento de produtividade e foco nas tarefas diárias.
 
-Currently, two official plugins are available:
+🔗 **Link de Acesso:** [pomato-pomodoro.vercel.app](https://pomato-pomodoro.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🔨 Funcionalidades
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- ⏱️ **Timer de Pomodoro:** Início rápido de ciclos com contagem regressiva para controle de foco e pausas.
+- 📝 **Nomeação de Tarefas:** Defina o nome da tarefa em execução antes ou ao iniciar um novo ciclo.
+- ⚙️ **Configurações Personalizadas:** Personalize o tempo dos ciclos:
+  - Tempo de Foco (ex: 25 min)
+  - Descanso Curto (ex: 5 min)
+  - Descanso Longo (ex: 15 min)
+- 📊 **Histórico de Ciclos:** Tabela completa com o histórico das tarefas realizadas, duração, data, status (em progresso, concluído) e tipo de ciclo. Permite também a limpeza do histórico.
+- 🌗 **Troca de Tema:** Suporte a **Tema Claro (Light Mode)** e **Tema Escuro (Dark Mode)**.
+- 🔔 **Aviso Sonoro:** Alerta de áudio ao finalizar cada ciclo de tempo.
+- ℹ️ **Explicação do Método:** Seção explicativa sobre a técnica Pomodoro.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tecnologias utilizadas
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+[![Tech](https://skillicons.dev/icons?i=react,vite,pnpm)](https://skillicons.dev)
+[![CSS](https://skillicons.dev/icons?i=css)](https://skillicons.dev)
+[![Deploy](https://skillicons.dev/icons?i=vercel)](https://skillicons.dev)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📁 Estrutura de páginas e navegação
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **`/` (Home):** Tela principal com o timer, input da tarefa, botões de ação e navegação.
+- **`/history` (Histórico):** Lista e registro de todas as sessões realizadas.
+- **`/settings` (Configurações):** Customização dos tempos de foco e descanso.
+- **`/about` (Sobre):** Explicação sobre a técnica Pomodoro.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 💻 Como rodar o projeto
+
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/Guichardx2/pomato.git
+
+2. **Navegue para a pasta**
+   ```bash
+   cd pomato
+
+3. **Instale as dependências **
+   ```bash
+   npm install
+   # ou
+   yarn install
+   # ou
+   pnpm install
+
+4. **Execute o servidor de desenvolvimento**
+   ```bash
+    npm run dev
+    # ou
+    yarn dev
+    # ou
+    pnpm dev 
